@@ -1,0 +1,6 @@
+# catFeeder build property overrides
+#
+network.port=8266
+network.auth_upload=yes
+network.password=OTAPassword
+

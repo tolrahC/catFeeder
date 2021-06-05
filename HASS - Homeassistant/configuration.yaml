@@ -9,6 +9,7 @@ sensor:
     payload_available: 'Online'
     payload_not_available: 'Offline'
     unit_of_measurement: '%'
+    icon: 
   - platform: template
     sensors:
       cats_fed:
