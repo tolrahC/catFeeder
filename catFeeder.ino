@@ -12,9 +12,9 @@
 #include <NTPClient.h>
 #include <ArduinoJson.h>
 
+#include "ReplaceMeVariables.h"
+
 // wifi
-const char* ssid = "YourSSID"; //type your WIFI information inside the quotes
-const char* password = "WIFIPassword";
 WiFiClient espClient;
 
 // wifi UDP for NTP, we dont have real time and we dont trust http headers :)
@@ -25,47 +25,16 @@ WiFiUDP ntpUDP;
 //We get the UTC Time
 NTPClient timeClient(ntpUDP, NTP_ADDRESS, 0, NTP_INTERVAL);
 
-// OTA
-#define SENSORNAME "CatFeeder" //change this to whatever you want to call your device
-#define OTApassword "OTAPassword" //the password you will need to enter to upload remotely via the ArduinoIDE yourOTApassword
-int OTAport = 8266;
-
-// MQTT
-const char* mqtt_server = "10.90.0.12"; // IP address or dns of the mqtt
-const char* mqtt_username = "mqtt"; //
-const char* mqtt_password = "MQTTPassword";
-const int mqtt_port = 1883; //REPLACEME, usually not?
 PubSubClient client(espClient);
-// MQTT TOPICS (change these topics as you wish) 
-const char* lastfed_topic = "home/catfeeder/lastfed"; // UTF date
-const char* remaining_topic = "home/catfeeder/remaining"; //Remain % fix distance above
-const char* feed_topic = "home/catfeeder/feed";  // command topic
-const char* willTopic = "home/catfeeder/LWT";  // Last Will and Testiment topic
-
-// stepper
-const int steps = 200; //REPLACEME this is the number of steps of the motor for a 360° rotation.
-const int baseSpeed = 55; //REPLACEME 
-Stepper myStepper(steps, D1, D2, D3, D4); // you may want to REPLACEME this based on how you cabled the motor.
-int enA = D5;
-int enB = D6;
-//int motorPower = 990; // legacy.. for using pwm
 
 // ultrasonic
-int trigger = D8;
-int echo = D7;
 float distance;
 int percentageFood;
-#define MAX_DISTANCE 200 //Max distance for the sensor to retrieve, in cm.
-float max_food = 22;  // REPLACEME in cm? seems to be "about" right
+
 NewPingESP8266 sonar(trigger, echo, MAX_DISTANCE);
 
 // Button
 const int buttonPin = 3;     // number of the pushbutton pin (RX, cause no other IO was available)
-
-//Set the timezone
-TimeChangeRule EDT = { "EDT", Second, Sun, Mar, 2, -240 };  // Eastern Daylight Time = UTC - 4 hours
-TimeChangeRule EST = { "EST", First, Sun, Nov, 2, -300 };   // Eastern Standard Time = UTC - 5 hours
-Timezone ET(EDT, EST);
 
 /**
  * Input time in epoch format and return tm time format
