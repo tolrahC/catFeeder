@@ -191,7 +191,7 @@ void feedCats(int steps)
 
     //Disable the motor
     setMotor(LOW);
-    delay(2000); // you may wanna change this based on how many times you press te button continously 
+
     digitalWrite(2, HIGH); // Turn off onboard LED
 
     publishInformationValues();
@@ -270,8 +270,6 @@ void reconnect()
     else {
         Serial.print("MQTT failed, rc=");
         Serial.print(client.state());
-        Serial.println(" try again in 5 seconds");
-        // Wait 5 seconds before retrying
     }
 }
 
