@@ -1,6 +1,5 @@
 # MQTT catFeeder
-catFeeder is an Arduino (ESP8266) MQTT controlled cat feeder which I use to feed my cats when I'm away or in the bed at 6.30 AM on a Sunday morning.
-	The project is forked upon https://github.com/jorgerance/catFeeder which usees a telegram bot.
+This project is forked from [lance36/catFeeder](https://github.com/lance36/catFeeder).  I've made some adjustments to fit my needs
 
 i also added a pushbutton for manual operation and  Home-assistant integration through a script and 2 mqtt sensor.
 ![](https://i.imgur.com/I6HMVH6.png)
@@ -47,7 +46,7 @@ There's actually no need of perfboard / protoboard. However, in order to mount t
 
 ## Parameters to be updated on the .ino file:
 
-    Just search for REPLACEME inside the ino before uploading.
+    All the variables that needs to be change are in the **ReplaceMeVariables.h** file.
 	
 Necessary libraries:
 
