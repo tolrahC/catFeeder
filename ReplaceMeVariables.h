@@ -7,28 +7,28 @@ All variables that may need to be changed are here
 
 
 // Wifi
-const char* ssid = "myssid"; 
-const char* password = "mywifipassword";
+const char* ssid = "YourSSID";
+const char* password = "WIFIPassword";
 
 // OTA
 #define SENSORNAME "CatFeeder" //change this to whatever you want to call your device
-#define OTApassword "somepassword" //the password you will need to enter to upload remotely via the ArduinoIDE yourOTApassword
+#define OTApassword "OTAPassword" //the password you will need to enter to upload remotely via the ArduinoIDE yourOTApassword
 int OTAport = 8266;
 
 // MQTT
 const char* mqtt_server = "mqtt.acme.com"; // IP address or dns of the mqtt
 const char* mqtt_username = "mqtt";
-const char* mqtt_password = "mqttpassword";
+const char* mqtt_password = "MQTTPassword";
 const int mqtt_port = 1883; //usually no need to change
 
 // MQTT TOPICS (change these topics as you wish) 
 const char* lastfed_topic = "home/catfeeder/lastfed"; // UTF date
 const char* remaining_topic = "home/catfeeder/remaining"; //Remain % fix distance above
 const char* feed_topic = "home/catfeeder/feed";  // command topic
-const char* willTopic = "home/catfeeder/LWT";  // Last Will and Testament topic
+const char* willTopic = "home/catfeeder/LWT";  // Last Will and Testiment topic
 
 // stepper
-const int steps = 200; //this is the number of steps of the motor for a 360° rotation.
+const int steps = 200; //this is the number of steps of the motor for a 360ï¿½ rotation.
 const int baseSpeed = 55;
 Stepper myStepper(steps, D1, D2, D3, D4); // you may want to change this based on how you cabled the motor.
 int enA = D5;
