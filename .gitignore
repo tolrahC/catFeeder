@@ -7,3 +7,4 @@
 /.vs/catFeeder/v16
 *.vcxproj*
 board.txt
+obfuscation.txt
