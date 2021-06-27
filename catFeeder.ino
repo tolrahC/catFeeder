@@ -4,7 +4,6 @@
 #include <NTPClient.h>
 #include <NewPingESP8266.h>
 
-// Look for all "REPLACEME" before uploading the code.
 #include <Stepper.h>
 #include <ESP8266WiFi.h>
 #include <ArduinoOTA.h>
