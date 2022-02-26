@@ -9,3 +9,5 @@
 board.txt
 obfuscation.txt
 ..bfg-report/
+Debug/
+ReplaceMeVariables.h
