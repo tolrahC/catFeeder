@@ -7,18 +7,18 @@ All variables that may need to be changed are here
 
 
 // Wifi
-const char* ssid = "YourSSID";
-const char* password = "WIFIPassword";
+const char* ssid = "charlesiot";
+const char* password = "tothecloud";
 
 // OTA
 #define SENSORNAME "CatFeeder" //change this to whatever you want to call your device
-#define OTApassword "OTAPassword" //the password you will need to enter to upload remotely via the ArduinoIDE yourOTApassword
+#define OTApassword "chasedexter" //the password you will need to enter to upload remotely via the ArduinoIDE yourOTApassword
 int OTAport = 8266;
 
 // MQTT
-const char* mqtt_server = "mqtt.acme.com"; // IP address or dns of the mqtt
+const char* mqtt_server = "10.90.0.21"; // IP address or dns of the mqtt
 const char* mqtt_username = "mqtt";
-const char* mqtt_password = "MQTTPassword";
+const char* mqtt_password = "zw@v3";
 const int mqtt_port = 1883; //usually no need to change
 
 // MQTT TOPICS (change these topics as you wish) 
