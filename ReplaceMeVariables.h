@@ -1,8 +1,5 @@
 /*
-
 All variables that may need to be changed are here
-
-
 */
 
 
